@@ -1,4 +1,4 @@
-package com.codingwithflutter.firebase_auth_demo_flutter
+package com.dashhire.dashhire_screening
 
 import android.os.Bundle
 

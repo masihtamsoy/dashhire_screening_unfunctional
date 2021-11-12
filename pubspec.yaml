@@ -39,6 +39,7 @@ dependencies:
 dev_dependencies:
   mockito: ^4.1.3
   test: any
+  change_app_package_name: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
