@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:meta/meta.dart';
 
@@ -31,7 +31,7 @@ class SignInManager {
     return await _signIn(auth.signInWithFacebook);
   }
 
-  Future<void> signInWithApple() async {
-    return await _signIn(auth.signInWithApple);
-  }
+  // Future<void> signInWithApple() async {
+  //   return await _signIn(auth.signInWithApple);
+  // }
 }

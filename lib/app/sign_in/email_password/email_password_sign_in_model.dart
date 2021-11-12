@@ -1,6 +1,6 @@
-import 'package:firebase_auth_demo_flutter/app/sign_in/validator.dart';
-import 'package:firebase_auth_demo_flutter/constants/strings.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
+import 'package:dashhire_screening/app/sign_in/validator.dart';
+import 'package:dashhire_screening/constants/strings.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
 import 'package:flutter/foundation.dart';
 
 enum EmailPasswordSignInFormType { signIn, register, forgotPassword }

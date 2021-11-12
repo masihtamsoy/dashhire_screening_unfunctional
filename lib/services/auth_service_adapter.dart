@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:apple_sign_in/apple_sign_in.dart';
+// import 'package:apple_sign_in/apple_sign_in.dart';
 import 'package:flutter/foundation.dart';
 
 import 'auth_service.dart';
@@ -121,9 +121,9 @@ class AuthServiceAdapter implements AuthService {
   @override
   Future<MyAppUser> signInWithGoogle() => authService.signInWithGoogle();
 
-  @override
-  Future<MyAppUser> signInWithApple({List<Scope> scopes}) =>
-      authService.signInWithApple();
+  // @override
+  // Future<MyAppUser> signInWithApple({List<Scope> scopes}) =>
+  //     authService.signInWithApple();
 
   @override
   Future<void> signOut() => authService.signOut();

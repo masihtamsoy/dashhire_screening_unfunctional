@@ -1,11 +1,11 @@
-import 'package:firebase_auth_demo_flutter/app/auth_widget.dart';
-import 'package:firebase_auth_demo_flutter/app/auth_widget_builder.dart';
-import 'package:firebase_auth_demo_flutter/app/email_link_error_presenter.dart';
-import 'package:firebase_auth_demo_flutter/services/apple_sign_in_available.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service_adapter.dart';
-import 'package:firebase_auth_demo_flutter/services/email_secure_store.dart';
-import 'package:firebase_auth_demo_flutter/services/firebase_email_link_handler.dart';
+import 'package:dashhire_screening/app/auth_widget.dart';
+import 'package:dashhire_screening/app/auth_widget_builder.dart';
+import 'package:dashhire_screening/app/email_link_error_presenter.dart';
+// import 'package:dashhire_screening/services/apple_sign_in_available.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
+import 'package:dashhire_screening/services/auth_service_adapter.dart';
+import 'package:dashhire_screening/services/email_secure_store.dart';
+import 'package:dashhire_screening/services/firebase_email_link_handler.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
@@ -15,17 +15,17 @@ import 'package:provider/provider.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  final appleSignInAvailable = await AppleSignInAvailable.check();
-  runApp(MyApp(appleSignInAvailable: appleSignInAvailable));
+  // final appleSignInAvailable = await AppleSignInAvailable.check();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp(
       {Key key,
-      this.appleSignInAvailable,
+      // this.appleSignInAvailable,
       this.initialAuthServiceType = AuthServiceType.firebase})
       : super(key: key);
-  final AppleSignInAvailable appleSignInAvailable;
+  // final AppleSignInAvailable appleSignInAvailable;
 
   final AuthServiceType initialAuthServiceType;
 
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<AppleSignInAvailable>.value(value: appleSignInAvailable),
+        // Provider<AppleSignInAvailable>.value(value: appleSignInAvailable),
         Provider<AuthService>(
             create: (_) => AuthServiceAdapter(
                 initialAuthServiceType: initialAuthServiceType),

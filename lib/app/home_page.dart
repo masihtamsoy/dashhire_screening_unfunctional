@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:firebase_auth_demo_flutter/common_widgets/avatar.dart';
-import 'package:firebase_auth_demo_flutter/common_widgets/platform_alert_dialog.dart';
-import 'package:firebase_auth_demo_flutter/common_widgets/platform_exception_alert_dialog.dart';
-import 'package:firebase_auth_demo_flutter/constants/keys.dart';
-import 'package:firebase_auth_demo_flutter/constants/strings.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
+import 'package:dashhire_screening/common_widgets/avatar.dart';
+import 'package:dashhire_screening/common_widgets/platform_alert_dialog.dart';
+import 'package:dashhire_screening/common_widgets/platform_exception_alert_dialog.dart';
+import 'package:dashhire_screening/constants/keys.dart';
+import 'package:dashhire_screening/constants/strings.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   Future<void> _signOut(BuildContext context) async {

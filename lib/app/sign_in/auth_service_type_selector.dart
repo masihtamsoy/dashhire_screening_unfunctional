@@ -1,7 +1,7 @@
-import 'package:firebase_auth_demo_flutter/common_widgets/segmented_control.dart';
-import 'package:firebase_auth_demo_flutter/constants/strings.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service_adapter.dart';
+import 'package:dashhire_screening/common_widgets/segmented_control.dart';
+import 'package:dashhire_screening/constants/strings.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
+import 'package:dashhire_screening/services/auth_service_adapter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

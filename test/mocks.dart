@@ -1,6 +1,6 @@
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
-import 'package:firebase_auth_demo_flutter/services/email_secure_store.dart';
-import 'package:firebase_auth_demo_flutter/services/firebase_email_link_handler.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
+import 'package:dashhire_screening/services/email_secure_store.dart';
+import 'package:dashhire_screening/services/firebase_email_link_handler.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:mockito/mockito.dart';

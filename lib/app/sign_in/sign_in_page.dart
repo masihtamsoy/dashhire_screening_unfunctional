@@ -1,14 +1,14 @@
-import 'package:apple_sign_in/apple_sign_in_button.dart' as apple_button;
-import 'package:firebase_auth_demo_flutter/app/sign_in/developer_menu.dart';
-import 'package:firebase_auth_demo_flutter/app/sign_in/email_password/email_password_sign_in_page.dart';
-import 'package:firebase_auth_demo_flutter/app/sign_in/email_link/email_link_sign_in_page.dart';
-import 'package:firebase_auth_demo_flutter/app/sign_in/sign_in_manager.dart';
-import 'package:firebase_auth_demo_flutter/app/sign_in/social_sign_in_button.dart';
-import 'package:firebase_auth_demo_flutter/common_widgets/platform_exception_alert_dialog.dart';
-import 'package:firebase_auth_demo_flutter/constants/keys.dart';
-import 'package:firebase_auth_demo_flutter/constants/strings.dart';
-import 'package:firebase_auth_demo_flutter/services/apple_sign_in_available.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
+// import 'package:apple_sign_in/apple_sign_in_button.dart' as apple_button;
+import 'package:dashhire_screening/app/sign_in/developer_menu.dart';
+import 'package:dashhire_screening/app/sign_in/email_link/email_link_sign_in_page.dart';
+import 'package:dashhire_screening/app/sign_in/email_password/email_password_sign_in_page.dart';
+import 'package:dashhire_screening/app/sign_in/sign_in_manager.dart';
+import 'package:dashhire_screening/app/sign_in/social_sign_in_button.dart';
+import 'package:dashhire_screening/common_widgets/platform_exception_alert_dialog.dart';
+import 'package:dashhire_screening/constants/keys.dart';
+import 'package:dashhire_screening/constants/strings.dart';
+// import 'package:dashhire_screening/services/apple_sign_in_available.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -89,15 +89,15 @@ class SignInPage extends StatelessWidget {
     }
   }
 
-  Future<void> _signInWithApple(BuildContext context) async {
-    try {
-      await manager.signInWithApple();
-    } on PlatformException catch (e) {
-      if (e.code != 'ERROR_ABORTED_BY_USER') {
-        _showSignInError(context, e);
-      }
-    }
-  }
+  // Future<void> _signInWithApple(BuildContext context) async {
+  //   try {
+  //     await manager.signInWithApple();
+  //   } on PlatformException catch (e) {
+  //     if (e.code != 'ERROR_ABORTED_BY_USER') {
+  //       _showSignInError(context, e);
+  //     }
+  //   }
+  // }
 
   Future<void> _signInWithEmailAndPassword(BuildContext context) async {
     final navigator = Navigator.of(context);
@@ -144,7 +144,7 @@ class SignInPage extends StatelessWidget {
   }
 
   Widget _buildSignIn(BuildContext context) {
-    final appleSignInAvailable = Provider.of<AppleSignInAvailable>(context);
+    // final appleSignInAvailable = Provider.of<AppleSignInAvailable>(context);
     // Make content scrollable so that it fits on small screens
     return SingleChildScrollView(
       child: Container(
@@ -159,15 +159,15 @@ class SignInPage extends StatelessWidget {
               child: _buildHeader(),
             ),
             SizedBox(height: 32.0),
-            if (appleSignInAvailable.isAvailable) ...[
-              apple_button.AppleSignInButton(
-                // TODO: add key when supported
-                style: apple_button.ButtonStyle.black,
-                type: apple_button.ButtonType.signIn,
-                onPressed: isLoading ? null : () => _signInWithApple(context),
-              ),
-              SizedBox(height: 8),
-            ],
+            // if (appleSignInAvailable.isAvailable) ...[
+            //   apple_button.AppleSignInButton(
+            //     // TODO: add key when supported
+            //     style: apple_button.ButtonStyle.black,
+            //     type: apple_button.ButtonType.signIn,
+            //     onPressed: isLoading ? null : () => _signInWithApple(context),
+            //   ),
+            //   SizedBox(height: 8),
+            // ],
             SocialSignInButton(
               key: googleButtonKey,
               assetName: 'assets/go-logo.png',

@@ -1,6 +1,6 @@
-import 'package:apple_sign_in/apple_sign_in.dart';
+// import 'package:apple_sign_in/apple_sign_in.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
@@ -147,41 +147,41 @@ class FirebaseAuthService implements AuthService {
     }
   }
 
-  @override
-  Future<MyAppUser> signInWithApple({List<Scope> scopes = const []}) async {
-    final AuthorizationResult result = await AppleSignIn.performRequests(
-        [AppleIdRequest(requestedScopes: scopes)]);
-    switch (result.status) {
-      case AuthorizationStatus.authorized:
-        final appleIdCredential = result.credential;
-        final oAuthProvider = OAuthProvider('apple.com');
-        final credential = oAuthProvider.credential(
-          idToken: String.fromCharCodes(appleIdCredential.identityToken),
-          accessToken:
-              String.fromCharCodes(appleIdCredential.authorizationCode),
-        );
+  // @override
+  // Future<MyAppUser> signInWithApple({List<Scope> scopes = const []}) async {
+  //   final AuthorizationResult result = await AppleSignIn.performRequests(
+  //       [AppleIdRequest(requestedScopes: scopes)]);
+  //   switch (result.status) {
+  //     case AuthorizationStatus.authorized:
+  //       final appleIdCredential = result.credential;
+  //       final oAuthProvider = OAuthProvider('apple.com');
+  //       final credential = oAuthProvider.credential(
+  //         idToken: String.fromCharCodes(appleIdCredential.identityToken),
+  //         accessToken:
+  //             String.fromCharCodes(appleIdCredential.authorizationCode),
+  //       );
 
-        final authResult = await _firebaseAuth.signInWithCredential(credential);
-        final firebaseUser = authResult.user;
-        if (scopes.contains(Scope.fullName)) {
-          final String displayName =
-              '${appleIdCredential.fullName.givenName} ${appleIdCredential.fullName.familyName}';
-          await firebaseUser.updateProfile(displayName: displayName);
-        }
-        return _userFromFirebase(firebaseUser);
-      case AuthorizationStatus.error:
-        throw PlatformException(
-          code: 'ERROR_AUTHORIZATION_DENIED',
-          message: result.error.toString(),
-        );
-      case AuthorizationStatus.cancelled:
-        throw PlatformException(
-          code: 'ERROR_ABORTED_BY_USER',
-          message: 'Sign in aborted by user',
-        );
-    }
-    return null;
-  }
+  //       final authResult = await _firebaseAuth.signInWithCredential(credential);
+  //       final firebaseUser = authResult.user;
+  //       if (scopes.contains(Scope.fullName)) {
+  //         final String displayName =
+  //             '${appleIdCredential.fullName.givenName} ${appleIdCredential.fullName.familyName}';
+  //         await firebaseUser.updateProfile(displayName: displayName);
+  //       }
+  //       return _userFromFirebase(firebaseUser);
+  //     case AuthorizationStatus.error:
+  //       throw PlatformException(
+  //         code: 'ERROR_AUTHORIZATION_DENIED',
+  //         message: result.error.toString(),
+  //       );
+  //     case AuthorizationStatus.cancelled:
+  //       throw PlatformException(
+  //         code: 'ERROR_ABORTED_BY_USER',
+  //         message: 'Sign in aborted by user',
+  //       );
+  //   }
+  //   return null;
+  // }
 
   @override
   Future<MyAppUser> currentUser() async {

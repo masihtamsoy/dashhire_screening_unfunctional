@@ -1,6 +1,6 @@
-import 'package:firebase_auth_demo_flutter/app/home_page.dart';
-import 'package:firebase_auth_demo_flutter/app/sign_in/sign_in_page.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
+import 'package:dashhire_screening/app/home_page.dart';
+import 'package:dashhire_screening/app/sign_in/sign_in_page.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 /// Builds the signed-in or non signed-in UI, depending on the user snapshot.

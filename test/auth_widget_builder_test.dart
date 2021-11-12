@@ -1,7 +1,7 @@
 // import 'dart:async';
 
-// import 'package:firebase_auth_demo_flutter/app/auth_widget_builder.dart';
-// import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
+// import 'package:dashhire_screening/app/auth_widget_builder.dart';
+// import 'package:dashhire_screening/services/auth_service.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_test/flutter_test.dart';
 // import 'package:mockito/mockito.dart';

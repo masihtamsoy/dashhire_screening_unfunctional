@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:apple_sign_in/apple_sign_in.dart';
-import 'package:firebase_auth_demo_flutter/services/auth_service.dart';
+// import 'package:apple_sign_in/apple_sign_in.dart';
+import 'package:dashhire_screening/services/auth_service.dart';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
 import 'package:random_string/random_string.dart' as random;
@@ -133,13 +133,13 @@ class MockAuthService implements AuthService {
     return user;
   }
 
-  @override
-  Future<MyAppUser> signInWithApple({List<Scope> scopes}) async {
-    await Future<void>.delayed(responseTime);
-    final MyAppUser user = MyAppUser(uid: random.randomAlphaNumeric(32));
-    _add(user);
-    return user;
-  }
+  // @override
+  // Future<MyAppUser> signInWithApple({List<Scope> scopes}) async {
+  //   await Future<void>.delayed(responseTime);
+  //   final MyAppUser user = MyAppUser(uid: random.randomAlphaNumeric(32));
+  //   _add(user);
+  //   return user;
+  // }
 
   @override
   void dispose() {
